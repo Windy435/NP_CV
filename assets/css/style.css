@@ -277,11 +277,9 @@ body, html{
     border-bottom:0;
 }
 
-/* === experience Section === */
+/*experience Section*/
 
-/*---------------------------------------------------------
-experience Timeline
------------------------------------------------------------*/
+/*Timeline*/
 .experience-section > div > div{
     margin-bottom: 60px;
 }
@@ -434,11 +432,6 @@ experience Timeline
     margin-bottom: 20px;
 }
 
-
-
-
-
-@media(min-width:992px) {
 .timeline:before {
     left: 50%;
 }
@@ -566,6 +559,7 @@ experience Timeline
     float: none;
 }
 
-
+.row > div .skilltitle{
+	padding-left: 10px;
+	padding-top: -10px;
 }
-
