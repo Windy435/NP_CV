@@ -15,6 +15,7 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- Custom styles CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <link href="assets/css/animation.css">
   <!-- Responsive CSS -->
   <link href="assets/css/responsive.css" rel="stylesheet">
 
@@ -53,6 +54,7 @@
 							<li><a href="#education">Education</a></li>
 							<li><a href="#skills">Skills</a></li>
 							<li><a href="#contact">Contact</a></li>
+							<li><a href="#edit">Edit</a></li>
 						</ul>
 					</div>
 				</div><!-- .container -->
@@ -73,12 +75,12 @@
 					<img src="assets/images/avarta.jpg" alt="">
 				  </div>
 				  <ul>
-					<li><strong>Name:</strong> {{data.summary.name}}</li>
-					<li><strong>Date of birth:</strong> {{data.summary.dateOfBirth}}</li>
-					<li><strong>Company:</strong> {{data.summary.company}}</li>
-					<li><strong>Position:</strong> {{data.summary.position}}</li>
-					<li><strong>Website: </strong><a href={{data.summary.link}}>{{data.summary.website}}</a></li>
-				  </ul>
+                    <li><strong>Name:</strong> <span ng-bind="name">{{data.summary.name}}</span></li>
+                      <li><strong>Date of birth:</strong> <span ng-bind="dateOfBirth">{{data.summary.dateOfBirth}}</span></li>
+                      <li><strong>Company:</strong> <span ng-bind="company">{{data.summary.company}}</span></li>
+                      <li><strong>Position:</strong> <span ng-bind="position">{{data.summary.position}}</span></li>
+                      <li><strong>Website: </strong><a href={{data.summary.link}}><span ng-bind="web">{{data.summary.website}}</span></a></li>
+                  </ul>
 				</div>
 			  </div> <!-- col-md-4 -->
 
@@ -210,13 +212,13 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<h2>Programming <strong>Skills</strong></h2>
-						<div ng-repeat="skill in data.pro-skills">
+						<div ng-repeat="skill in data.pro_skills">
                             <div class="row">
-                                <div class="col-md-2 skilltitle">{{skill.name-skill}}</div>
+                                <div class="col-md-2 skilltitle">{{skill.name_skill}}</div>
                                 <div class="col-md-8">
                                     <div class="progress">
                                         <div class="progress-bar" style={{skill.style}}>
-                                            <span class="sr-only">{{skill.percent-complete}}</span>
+                                            <span class="sr-only">{{skill.percent_complete}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -225,13 +227,13 @@
 					</div>
 					<div class="col-sm-6">
 						<h2>Soft-<strong>Skills</strong></h2>
-					   <div ng-repeat="skill in data.soft-skills">
+					   <div ng-repeat="skill in data.soft_skills">
                             <div class="row">
-                                <div class="col-md-2 skilltitle">{{skill.name-skill}}</div>
+                                <div class="col-md-2 skilltitle">{{skill.name_skill}}</div>
                                 <div class="col-md-8">
                                     <div class="progress">
                                         <div class="progress-bar" style={{skill.style}}>
-                                            <span class="sr-only">{{skill.percent-complete}}</span>
+                                            <span class="sr-only">{{skill.percent_complete}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -252,20 +254,47 @@
 				<div class="row center-xs">
 				  <div class="col-sm-6">
 					<strong>Email:</strong>
-					  {{data.contact.email}}
+					  <span ng-bind="email">{{data.contact.email}}</span>
 				  </div>
 
 				  <div class="col-sm-6">
 					<div class="contact-number">
 					  <strong>Phone Number:</strong>
-					  {{data.contact.phoneNumber}}<br>
+					  <span ng-bind="phone">{{data.contact.phoneNumber}}</span><br>
 					</div>
 				</div>
 			  </div>
 			</div><!-- /.row -->
 		  </div><!-- /.container -->
 		</section><!-- End Contact Section -->
-
+            
+        <!-- Edit Section -->
+        <section id="edit" class="edit-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Edit <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/></h2>
+                <div class="check-element animate-show" ng-show="checked">
+                    <div class="short-infor">
+                        <div class="edit-summary">
+                            <h3>Summary</h3>
+                            <ul>
+                                <li><strong>Name:</strong><input type="text" ng-model="name"></li><br>
+                                <li><strong>Date of birth:</strong><input type="date" ng-model="dateOfBirth"></li><br>
+                                <li><strong>Company:</strong><input type="text" ng-model="company"></li><br>
+                                <li><strong>Position:</strong><input type="text" ng-model="position"></li><br>
+                                <li><strong>Website: </strong><input type="text" ng-model="web"></li><br>
+                            </ul>
+                        </div>
+                        <div class="edit-contact">
+                            <h3>Contact</h3>
+                               <ul>
+                                    <li><strong>Email:</strong><input type="text" ng-model="email"></li><br>
+                                    <li><strong>Phone number:</strong><input type="text" ng-model="phone"></li><br>
+                               </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 		<!-- Footer Section -->
 		<footer class="footer-wrapper">

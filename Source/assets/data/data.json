@@ -47,42 +47,42 @@
         "title":"Bachelor",
         "position":"Information Technology in Ho Chi Minh University of Science, HCM city, Vietnam"
         }],
-    "pro-skills":[
+    "pro_skills":[
         {
-            "name-skill":"HTML5",
+            "name_skill":"HTML5",
             "style":"width: 80%;",
-            "percent-complete":"80% Complete"
+            "percent_complete":"80% Complete"
         },
         {
-            "name-skill":"CSS",
+            "name_skill":"CSS",
             "style":"width: 70%;",
-            "percent-complete":"70% Complete"
+            "percent_complete":"70% Complete"
         },
         {
-            "name-skill":"Javascript",
+            "name_skill":"Javascript",
             "style":"width: 40%;",
-            "percent-complete":"40% Complete"
+            "percent_complete":"40% Complete"
         },
         {
-            "name-skill":".Net",
+            "name_skill":".Net",
             "style":"width: 75%;",
-            "percent-complete":"75% Complete"
+            "percent_complete":"75% Complete"
         }],
-    "soft-skills":[
+    "soft_skills":[
         {
-            "name-skill":"Communication",
+            "name_skill":"Communication",
             "style":"width: 80%;",
-            "percent-complete":"80% Complete"
+            "percent_complete":"80% Complete"
         },
         {
-            "name-skill":"Leader",
+            "name_skill":"Leader",
             "style":"width: 70%;",
-            "percent-complete":"70% Complete"
+            "percent_complete":"70% Complete"
         },
         {
-            "name-skill":"Creative",
+            "name_skill":"Creative",
             "style":"width: 70%;",
-            "percent-complete":"70% Complete"
+            "percent_complete":"70% Complete"
         }],
     "contact":{
         "email":"tnphong435@gmail.com",
