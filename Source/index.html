@@ -54,8 +54,7 @@
 							<li><a href="#education">Education</a></li>
 							<li><a href="#skills">Skills</a></li>
 							<li><a href="#contact">Contact</a></li>
-							<li><a href="#edit">Edit</a></li>
-						</ul>
+                        </ul>
 					</div>
 				</div><!-- .container -->
 			</nav>
@@ -75,11 +74,11 @@
 					<img src="assets/images/avarta.jpg" alt="">
 				  </div>
 				  <ul>
-                    <li><strong>Name:</strong> <span ng-bind="name">{{data.summary.name}}</span></li>
-                      <li><strong>Date of birth:</strong> <span ng-bind="dateOfBirth">{{data.summary.dateOfBirth}}</span></li>
-                      <li><strong>Company:</strong> <span ng-bind="company">{{data.summary.company}}</span></li>
-                      <li><strong>Position:</strong> <span ng-bind="position">{{data.summary.position}}</span></li>
-                      <li><strong>Website: </strong><a href={{data.summary.link}}><span ng-bind="web">{{data.summary.website}}</span></a></li>
+                    <li><strong>Name:</strong> <span ng-bind="name">{{ cv.summary.name }}</span></li>
+                      <li><strong>Date of birth:</strong> <span ng-bind="dateOfBirth">{{ cv.summary.dateOfBirth }}</span></li>
+                      <li><strong>Company:</strong> <span ng-bind="company">{{ cv.summary.company }}</span></li>
+                      <li><strong>Position:</strong> <span ng-bind="position">{{ cv.summary.position }}</span></li>
+                      <li><strong>Website: </strong><a href={{data.summary.link}}><span ng-bind="web">{{ cv.summary.website }}</span></a></li>
                   </ul>
 				</div>
 			  </div> <!-- col-md-4 -->
@@ -116,7 +115,7 @@
 							<h2 class="section-title">Experience</h2>
 						</div>
 						<div class="experience">
-							<ul class="timeline" ng-repeat="content in data.experience">
+							<ul class="timeline" ng-repeat="content in cv.experience">
 								<li class={{content.class}}>
 									<div class="posted-date">
 										<span class="month">{{content.month}}</span>
@@ -151,7 +150,7 @@
 							<h2 class="section-title">Project</h2>
 						</div>
 						<div class="experience">
-							<ul class="timeline" ng-repeat="pj in data.project">
+							<ul class="timeline" ng-repeat="pj in cv.project">
 								<li class={{pj.class}}>
 									<div class="posted-date">
 										<span class="month">{{pj.month}}</span>
@@ -182,7 +181,7 @@
 							<h2 class="section-title">Education</h2>
 						</div>
 						<div class="experience">
-							<ul class="timeline" ng-repeat="edu in data.education">
+							<ul class="timeline" ng-repeat="edu in cv.education">
 								<li class={{edu.class}}>
 									<div class="posted-date">
 										<span class="month">{{edu.month}}</span>
@@ -212,7 +211,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<h2>Programming <strong>Skills</strong></h2>
-						<div ng-repeat="skill in data.pro_skills">
+						<div ng-repeat="skill in cv.pro_skills">
                             <div class="row">
                                 <div class="col-md-2 skilltitle">{{skill.name_skill}}</div>
                                 <div class="col-md-8">
@@ -227,7 +226,7 @@
 					</div>
 					<div class="col-sm-6">
 						<h2>Soft-<strong>Skills</strong></h2>
-					   <div ng-repeat="skill in data.soft_skills">
+					   <div ng-repeat="skill in cv.soft_skills">
                             <div class="row">
                                 <div class="col-md-2 skilltitle">{{skill.name_skill}}</div>
                                 <div class="col-md-8">
@@ -254,13 +253,13 @@
 				<div class="row center-xs">
 				  <div class="col-sm-6">
 					<strong>Email:</strong>
-					  <span ng-bind="email">{{data.contact.email}}</span>
+					  <span ng-bind="email">{{cv.contact.email}}</span>
 				  </div>
 
 				  <div class="col-sm-6">
 					<div class="contact-number">
 					  <strong>Phone Number:</strong>
-					  <span ng-bind="phone">{{data.contact.phoneNumber}}</span><br>
+					  <span ng-bind="phone">{{cv.contact.phoneNumber}}</span><br>
 					</div>
 				</div>
 			  </div>
@@ -268,34 +267,6 @@
 		  </div><!-- /.container -->
 		</section><!-- End Contact Section -->
             
-        <!-- Edit Section -->
-        <section id="edit" class="edit-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Edit <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/></h2>
-                <div class="check-element animate-show" ng-show="checked">
-                    <div class="short-infor">
-                        <div class="edit-summary">
-                            <h3>Summary</h3>
-                            <ul>
-                                <li><strong>Name:</strong><input type="text" ng-model="name"></li><br>
-                                <li><strong>Date of birth:</strong><input type="date" ng-model="dateOfBirth"></li><br>
-                                <li><strong>Company:</strong><input type="text" ng-model="company"></li><br>
-                                <li><strong>Position:</strong><input type="text" ng-model="position"></li><br>
-                                <li><strong>Website: </strong><input type="text" ng-model="web"></li><br>
-                            </ul>
-                        </div>
-                       <div class="edit-contact">
-                            <h3>Contact</h3>
-                               <ul>
-                                    <li><strong>Email:</strong><input type="text" ng-model="email"></li><br>
-                                    <li><strong>Phone number:</strong><input type="text" ng-model="phone"></li><br>
-                               </ul>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 		<!-- Footer Section -->
 		<footer class="footer-wrapper">
 		  <div class="container">
@@ -313,7 +284,9 @@
 		<!-- Javascript files -->
 		<script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/angular.min.js"></script>
-        <script src="assets/js/back-end.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
 	</div>
 </body>
 </html>
